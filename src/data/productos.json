@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Ferrari 2002",
+    "description": "Ferrari a escala 2002",
+    "price": 68,
+    "img": "sin imagen",
+    "code": "abc123",
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "title": "Red Bull 2022",
+    "description": "F1 Max Vertapen 2022 escala",
+    "price": 35,
+    "img": "sin imagen",
+    "code": "def456",
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "title": "Mc claren 1989",
+    "description": "Senna 89",
+    "price": 45,
+    "img": "sin imagen",
+    "code": "ghi789",
+    "stock": 30
+  },
+  {
+    "id": 4,
+    "title": "Renault 2006",
+    "description": "Renault 2006 F.Alonso",
+    "price": 120,
+    "img": "sin imagen",
+    "code": "jkl012",
+    "stock": 15
+  },
+  {
+    "id": 5,
+    "title": "Williams 1994",
+    "description": "Williams Senna 94",
+    "price": 1500,
+    "img": "sin imagen",
+    "code": "mno345",
+    "stock": 10
+  }
+]
