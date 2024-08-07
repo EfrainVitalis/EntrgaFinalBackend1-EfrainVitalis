@@ -1,0 +1,19 @@
+<h1>ELIGE TU AUTO A ESCALA</h1>
+
+<div class="contenedorProductos">
+
+ <div class="contenedorProductos">    
+    {{#each products}}
+    <div class="card">
+        <p><h6>producto</h6>{{this.title}}</p>
+        <p>{{this.description}}</p>        
+        <p>{{this.price}}</p>
+        <p>{{this.img}}</p>
+        <p>{{this.code}}</p>
+        <p>{{this.stock}}</p>        
+        <button> !!COMPRAR!!</button>
+
+    </div> 
+    {{/each}}
+</div> 
+

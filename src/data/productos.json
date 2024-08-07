@@ -43,5 +43,23 @@
     "img": "sin imagen",
     "code": "mno345",
     "stock": 10
+  },
+  {
+    "id": 6,
+    "title": "Maclaren 2000",
+    "description": "Maclaren murcielago ",
+    "price": 120,
+    "img": "js",
+    "code": "ms",
+    "stock": 25
+  },
+  {
+    "id": 7,
+    "title": "Fitito",
+    "description": "fitito a escala",
+    "price": 52,
+    "img": "sin imagen",
+    "code": "ssss",
+    "stock": 7
   }
 ]

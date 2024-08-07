@@ -2,6 +2,7 @@ const express = require("express");
 const ProductManager = require("../manager/product-manager.js");
 const manager = new ProductManager("./src/data/productos.json");
 const router = express.Router();
+
 let products = [];
 //Listar todos los productos: 
 

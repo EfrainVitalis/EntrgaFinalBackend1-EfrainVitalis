@@ -2,6 +2,8 @@
 const fs = require("fs").promises;
 
 
+
+
 class ProductManager {
     static ultId = 0;
 
@@ -143,3 +145,4 @@ class ProductManager {
 }    
 
 module.exports = ProductManager;
+
