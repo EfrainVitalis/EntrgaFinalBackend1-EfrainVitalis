@@ -1,5 +1,4 @@
-
-// // Hay que crear una instancia de Socket
+ // Hay que crear una instancia de Socket
 const socket = io();
 
 // Traemos el array de productos
