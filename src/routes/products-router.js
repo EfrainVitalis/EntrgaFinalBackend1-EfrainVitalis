@@ -1,33 +1,41 @@
 const express = require("express");
-const ProductManager = require("../manager/product-manager.js");
-const manager = new ProductManager("./src/data/productos.json");
+const ProductManager = require("../dao/db/product-manager-db.js");
+const manager = new ProductManager();
 const router = express.Router();
 
 let products = [];
-//Listar todos los productos: 
+//Listar todos los productos y agregamos el sort para que ordene por precio:
 
 router.get("/", async (req, res) => {
     const limit = req.query.limit;
+    const sort = req.query.sort; 
+
     try {
-        const arrayProductos = await manager.getProducts();
-        if (limit) {
-            res.send(arrayProductos.slice(0, limit));
-        } else {
-            res.send(arrayProductos);
+        let arrayProductos = await manager.getProducts();
+
+        // Si se especifica el parámetro `sort`, ordenamos los productos
+        if (sort === 'asc') {
+            arrayProductos.sort((a, b) => a.price - b.price);
+        } else if (sort === 'desc') {
+            arrayProductos.sort((a, b) => b.price - a.price);
         }
+
+        // Aplicamos el límite si está definido
+        if (limit) {
+            arrayProductos = arrayProductos.slice(0, limit);
+        }
+
+        res.send(arrayProductos);
     } catch (error) {
         res.status(500).send("Error interno del servidor");
-
     }
-
-})
-
+});
 // Buscar productos por Id:
 
 router.get("/:pid", async (req, res) => {
     let id = req.params.pid;
     try {
-        const producto = await manager.getProductById(parseInt(id));
+        const producto = await manager.getProductById(id);
         if (!producto) {
             res.send("Producto no encontrado");
         } else {
@@ -104,5 +112,17 @@ router.delete("/:pid", async (req, res) => {
         res.status(500).send({ status: "error", message: "Error interno del servidor" });
     }
 });
+//Agregar un nuevo producto: 
+router.post("/", async (req, res) => {
+    const resultado = await manager.addProduct(req.body);
+
+    if (resultado.success) {
+        res.status(201).send(resultado.message);
+    } else {
+        res.status(400).send(resultado.message);
+    }
+});
+
+
 
 module.exports = router;
